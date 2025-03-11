@@ -9,44 +9,10 @@ import {
 } from "react-icons/fa";
 
 export default function Content() {
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = (event) => {
-      const element = event.target;
-      const maxScroll = element.scrollHeight - element.clientHeight;
-      const scrollTop = element.scrollTop;
-      setScrollPosition(scrollTop / maxScroll);
-    };
-
-    const container = document.getElementById("content-container");
-    if (container) {
-      container.addEventListener("scroll", handleScroll);
-    }
-
-    return () => {
-      if (container) {
-        container.removeEventListener("scroll", handleScroll);
-      }
-    };
-  }, []);
-
   return (
     <div
       id="content-container"
       className="h-full w-full overflow-y-auto bg-white bg-opacity-90 backdrop-blur-xl text-gray-900 p-12 rounded-r-xl shadow-2xl border border-gray-300 transition-all duration-500 ease-in-out scrollbar-thin"
-      style={{
-        maskImage: `linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,${
-          1 - scrollPosition
-        }) 10%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 70%, rgba(0,0,0,${
-          1 - scrollPosition
-        }) 90%, rgba(0,0,0,0) 100%)`,
-        WebkitMaskImage: `linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,${
-          1 - scrollPosition
-        }) 10%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 70%, rgba(0,0,0,${
-          1 - scrollPosition
-        }) 90%, rgba(0,0,0,0) 100%)`,
-      }}
     >
       {/* About Me */}
       <section id="about" className="mb-12 fade-in">
