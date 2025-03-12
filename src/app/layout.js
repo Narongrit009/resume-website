@@ -1,3 +1,10 @@
+import { Kanit } from "next/font/google";
+
+const kanit = Kanit({
+  subsets: ["latin", "thai"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
 export default function RootLayout({ children }) {
   return (
     <html lang="th">
@@ -7,7 +14,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/image/icon-ns.png" type="image/x-icon" />
         <link rel="shortcut icon" href="/image/icon-ns.png" type="image/x-icon" />
       </head>
-      <body>{children}</body>
+      <body className={kanit.className}>{children}</body>
     </html>
   );
 }

@@ -1,7 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap");
 /* ./styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body {
+  font-family: "Kanit", sans-serif;
+}
+
 
 /* Custom Scrollbar */
 .scrollbar-thin::-webkit-scrollbar {
