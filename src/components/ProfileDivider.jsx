@@ -61,7 +61,7 @@ export default function ProfileDivider() {
 
       {/* คอนเทนต์ด้านล่าง */}
       <div className="absolute bottom-0 w-full bg-gradient-to-t from-black via-black/80 to-transparent text-center py-10">
-        <h1 className="text-2xl font-bold">Narongrit Suaysom</h1>
+        <h1 className="text-2xl font-semibold">Narongrit Suaysom</h1>
         <p className="text-red-500 text-sm mt-1">Developer</p>
 
         <div className="flex justify-center space-x-4 mt-4">
@@ -88,7 +88,7 @@ export default function ProfileDivider() {
             onClick={(e) => e.stopPropagation()} // ป้องกันการปิดเมื่อกดภายใน
           >
             {/* ไอคอน Social + หัวข้อ */}
-            <div className="flex items-center gap-2 text-2xl font-bold">
+            <div className="flex items-center gap-2 text-2xl font-semibold text-gray-800">
               {socialLinks[selectedSocial].icon}
               <span className="capitalize">
                 สแกน QR เพื่อไปที่ {selectedSocial}
@@ -109,9 +109,9 @@ export default function ProfileDivider() {
               href={socialLinks[selectedSocial].url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`mt-4 px-6 py-2 text-white rounded-lg shadow-lg transition-all duration-500 ${socialLinks[selectedSocial].color}`}
+              className={`mt-4 px-6 py-2 text-white rounded-xl shadow-xl transition-all duration-500 transform hover:scale-105 ${socialLinks[selectedSocial].color}`}
             >
-              ไปที่ลิงก์
+              ไปที่ {selectedSocial}
             </a>
           </div>
         </div>
